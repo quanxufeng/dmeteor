@@ -14,10 +14,10 @@ mv $BUNDLE_DIR/bundle $APP_DIR
 
 # install packages
 cd $APP_DIR/programs/server
-npm install --production
+npm install --production --unsafe-perm
 
 # clean up
 rm -rf $APP_SRC_DIR
 rm -rf $BUNDLE_DIR
-rm -rf ~/.meteor
-rm /usr/local/bin/meteor
+sudo rm -rf ~/.meteor
+sudo rm /usr/local/bin/meteor
