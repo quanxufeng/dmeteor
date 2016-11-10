@@ -7,8 +7,9 @@ curl -sL https://install.meteor.com | sed s/--progress-bar/-sL/g | /bin/sh
 
 # build app
 cd $APP_SRC_DIR
+sudo chown -Rh "$USER" .meteor/local
 npm install
-meteor build  --allow-superuser --unsafe-perm --directory $BUNDLE_DIR
+meteor build --unsafe-perm --directory $BUNDLE_DIR
 
 mv $BUNDLE_DIR/bundle $APP_DIR
 
